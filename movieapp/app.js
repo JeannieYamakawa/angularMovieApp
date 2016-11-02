@@ -39,7 +39,7 @@ app.controller('movieApp', ['$scope', '$rootScope','$http', function($scope, $ro
 
 
 
-app.controller('singleMovie', ['$scope', '$http', '$rootScope','$routeParams', '$location',function($scope, $http, $rootScope,$routeParams,$location){
+app.controller('singleMovie', ['$scope', '$http', '$rootScope','$routeParams', '$location',function($scope, $http, $rootScope,$routeParams, $location){
     $scope.omdb={};
     $scope.omdb.movieID = $routeParams.movieID;
 
@@ -47,21 +47,22 @@ app.controller('singleMovie', ['$scope', '$http', '$rootScope','$routeParams', '
     $http.get('http://www.omdbapi.com/?i=' + $routeParams.movieID).then(function(singleMovieData){
 
         $scope.omdb.movieData = singleMovieData.data;
-
-
-        // console.log($scope.omdb.movieData, "scope stored movie data");
-        // console.log(singleMovieData.data, "DATA RETURNED SINGLE MOVIE");
-
-
     });
 
     $scope.searchButtonClicked = function(whatUserTyped){
+
+        $location.path('/#/');
+        
         console.log(whatUserTyped, "whatUserTyped");
         $http.get('http://www.omdbapi.com/?s=' + whatUserTyped).then(function(dataReturnedFromOMDB){
           $scope.omdb.movieData = dataReturnedFromOMDB.data.Search;
           console.log(dataReturnedFromOMDB.data.Search);
 
           $rootScope.searchTitle = undefined;
+
+
+
+
 
         });
         }
