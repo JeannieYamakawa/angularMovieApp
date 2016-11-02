@@ -1,6 +1,54 @@
-<input type="text" id='searchInput' ng-model='omdb.searchInput'>
-<button ng-click='searchButtonClicked(omdb.searchInput)'  id='searchButton'> Search </button>
+<h1>Movie Search App</h1>
+<div class="ui eight item menu small">
+      <input class="item" type="text" id='searchInput' ng-model='$rootScope.searchTitle'>
+      <button class="item" ng-click='searchButtonClicked($rootScope.searchTitle)'  id='searchButton'> Search </button>
+
+</div>
 
 
 
-    <h1>booyah</h1>
+ <div class="ui container">
+
+<p style='margin:7vh'></p>
+
+
+<div class="ui items">
+  <div class="item">
+    <div class="ui medium image">
+      <img src="{{ omdb.movieData.Poster}}">
+    </div>
+    <div class="content">
+
+      <div class="header">{{ omdb.movieData.Title}}</div>
+      <p class="stay">{{ omdb.movieData.Year}}</p>
+        <p class="price">{{ omdb.movieData.Plot}}</p>
+
+      <p> <strong>Featuring:</strong> {{omdb.movieData.Actors }}</p>
+
+<p style='margin:7vh'></p>
+      <div class="header">Additional Details:</div>
+
+      <div class="meta">
+
+
+
+      </div>
+      <div class="description">
+              <p> <strong>Director:</strong> {{ omdb.movieData.Director}}</p>
+        <div> <strong>Writer(s):</strong> {{ omdb.movieData.Writer}}</div>
+        <p> <strong>Rating:</strong> {{ omdb.movieData.Rated}}</p>
+        <p><strong>Awards:</strong> {{ omdb.movieData.Awards}}</p>
+        <p> <strong>Country:</strong> {{ omdb.movieData.Country}}</p>
+        <p> <strong>Language:</strong> {{ omdb.movieData.Language}}</p>
+        <p> <strong>Runtime:</strong> {{ omdb.movieData.Runtime}}</p>
+        <p> <strong>Genre:</strong> {{ omdb.movieData.Genre}}</p>
+        <p> <strong>Metascore:</strong> {{ omdb.movieData.Metascore}}</p>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>

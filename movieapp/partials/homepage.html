@@ -1,13 +1,24 @@
 
-<input type="text" id='searchInput' ng-model='omdb.searchInput'>
-<button ng-click='searchButtonClicked(omdb.searchInput)'  id='searchButton'> Search </button>
+<h1>Movie Search App</h1>
+<div class="ui eight item menu small">
+      <input class="item" type="text" id='searchInput' ng-model='$rootScope.searchTitle'>
+      <button class="item" ng-click='searchButtonClicked($rootScope.searchTitle)'  id='searchButton'> Search </button>
+
+</div>
 
 
-<ul>
-
-    <li  ng-repeat='movie in omdb.movieData'>
-        <a href="#/{{movie.imdbID}}"> {{ movie.Title}} </a>
-    </li>
 
 
-</ul>
+
+ <div class="ui container">
+
+
+    <ul >
+        <li  class="ui segment" ng-repeat='movie in omdb.movieData'>
+            <h5><a href="#/{{movie.imdbID}}"> {{ movie.Title}} </a></h5>
+            <p>{{movie.Year}}</p>
+        </li>
+    </ul>
+
+
+</div>
