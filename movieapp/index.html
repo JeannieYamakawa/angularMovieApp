@@ -5,20 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Movie App</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js" charset="UTF-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"></script>
     <script src = 'app.js'charset="UTF-8"></script>
+    
 
 </head>
 <body ng-app='myMovies'>
-    <div ng-controller='movieApp'>
-    <input type="text" id='searchInput' ng-model='omdb.searchInput'>
-    <button ng-click='searchButtonClicked(omdb.searchInput)'  id='searchButton'> Search </button>
 
+    <div ng-view></div>
 
-    <ul>
-        <li ng-repeat='movie in omdb.movies'> {{ movie.title }} </li>
-    </ul>
-
-    </div>
 </body>
 </html>
